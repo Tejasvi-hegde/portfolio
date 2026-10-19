@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tejasvi Vasant Hegde — Software &amp; ML Engineer</title>
+<meta name="description" content="Tejasvi Vasant Hegde builds machine-learning models and the production software around them: forecasting systems, AI-driven deployment pipelines and full-stack applications.">
+<meta name="author" content="Tejasvi Vasant Hegde">
+<meta property="og:title" content="Tejasvi Vasant Hegde — Software & ML Engineer">
+<meta property="og:description" content="Machine-learning models and the production software around them.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F5F7FA">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232747D0'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='600' fill='white' text-anchor='middle'%3ETH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F7FA;
+    --surface: #FFFFFF;
+    --ink: #0F1B2D;
+    --ink-2: #2B3648;
+    --muted: #5D687A;
+    --rule: #DCE2EA;
+    --rule-soft: #E9EDF2;
+    --accent: #2747D0;
+    --accent-ink: #1C35A3;
+    --accent-soft: #E9EEFD;
+    --actual: #8A94A6;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+    --shadow: 0 1px 2px rgba(15, 27, 45, .05), 0 18px 40px -20px rgba(15, 27, 45, .22);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink-2);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, svg, canvas { display: block; max-width: 100%; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--accent-ink); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  h1, h2, h3 { font-family: var(--serif); color: var(--ink); font-weight: 500; margin: 0; letter-spacing: -0.01em; }
+  p { margin: 0 0 1em; }
+  ul, ol { margin: 0; padding: 0; }
+
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
+  .skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: #fff; padding: 8px 14px; border-radius: 6px; z-index: 100; }
+  .skip:focus { left: 16px; }
+
+  /* ---------- Navigation ---------- */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(245, 247, 250, .86);
+    backdrop-filter: saturate(160%) blur(10px);
+    -webkit-backdrop-filter: saturate(160%) blur(10px);
+    border-bottom: 1px solid transparent;
+    transition: border-color .2s ease;
+  }
+  .nav.scrolled { border-bottom-color: var(--rule); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 600; }
+  .brand-mark {
+    width: 32px; height: 32px; border-radius: 8px; background: var(--accent); color: #fff;
+    display: grid; place-items: center; font-family: var(--serif); font-size: 15px; font-weight: 600; letter-spacing: .02em;
+  }
+  .brand:hover { color: var(--ink); }
+  .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; }
+  .nav-links a { color: var(--ink-2); text-decoration: none; font-size: 15px; }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links .btn { color: var(--ink); }
+  .menu-btn { display: none; background: none; border: 1px solid var(--rule); border-radius: 8px; width: 40px; height: 40px; cursor: pointer; color: var(--ink); }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 20px; border-radius: 8px;
+    font: 500 15px/1 var(--sans); text-decoration: none; cursor: pointer;
+    border: 1px solid var(--ink); color: var(--ink); background: transparent;
+    transition: background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .btn:hover { background: var(--ink); color: #fff; }
+  .btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-ink); border-color: var(--accent-ink); color: #fff; }
+  .btn-small { padding: 8px 14px; font-size: 14px; }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 96px 0 88px; }
+  .hero h1 { font-size: clamp(3rem, 8.4vw, 7rem); line-height: .98; letter-spacing: -0.032em; margin-bottom: 52px; }
+  .hero-row { display: grid; grid-template-columns: 1.15fr 1fr; gap: 72px; align-items: start; margin-bottom: 72px; }
+  .lede { font-family: var(--serif); font-size: clamp(1.55rem, 2.7vw, 2.15rem); line-height: 1.28; color: var(--ink); max-width: 22ch; margin: 0; }
+  .hero-sub { color: var(--muted); max-width: 46ch; margin: 6px 0 28px; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .facts { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--rule); padding-top: 22px; margin: 0; }
+  .facts div { padding: 0 24px; border-left: 1px solid var(--rule); }
+  .facts div:first-child { padding-left: 0; border-left: 0; }
+  .facts dt { font-size: 13px; color: var(--muted); }
+  .facts dd { margin: 4px 0 0; color: var(--ink); font-weight: 500; }
+
+  /* ---------- Sections ---------- */
+  .section { padding: 96px 0; border-top: 1px solid var(--rule); }
+  .section-grid { display: grid; grid-template-columns: 250px 1fr; gap: 56px; }
+  .section-head { align-self: start; position: sticky; top: 100px; }
+  .section-head h2 { font-size: 2.1rem; line-height: 1.1; margin-bottom: 12px; }
+  .section-head p { color: var(--muted); font-size: 15px; margin: 0; max-width: 28ch; }
+
+  /* Experience */
+  .role { display: grid; gap: 6px; }
+  .role-top { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  .role h3 { font-size: 1.6rem; }
+  .role .org { color: var(--accent); font-weight: 500; }
+  .when { color: var(--muted); font-size: 14.5px; font-variant-numeric: tabular-nums; }
+  .role > p { max-width: 64ch; margin-top: 10px; }
+  .bullets { list-style: none; display: grid; gap: 10px; margin: 6px 0 24px; max-width: 66ch; }
+  .bullets li { position: relative; padding-left: 22px; }
+  .bullets li::before { content: ""; position: absolute; left: 2px; top: 0.78em; width: 9px; height: 2px; border-radius: 1px; background: var(--accent); }
+
+  .flow { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; overflow: hidden; counter-reset: step; }
+  .flow li { padding: 18px 18px 20px; border-right: 1px solid var(--rule-soft); position: relative; counter-increment: step; }
+  .flow li:last-child { border-right: 0; }
+  .flow li::before { content: counter(step); display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font: 500 12px/1 var(--mono); margin-bottom: 12px; }
+  .flow li::after { content: ""; position: absolute; right: -6px; top: 26px; width: 10px; height: 10px; border-top: 1.5px solid var(--rule); border-right: 1.5px solid var(--rule); transform: rotate(45deg); background: var(--surface); z-index: 1; }
+  .flow li:last-child::after { display: none; }
+  .flow strong { display: block; color: var(--ink); font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+  .flow span { font-size: 14px; color: var(--muted); line-height: 1.5; display: block; }
+  .flow-cap { font-size: 13px; color: var(--muted); margin: 10px 0 0; }
+
+  .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .tags li { font-size: 13px; color: var(--ink-2); padding: 4px 10px; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); }
+
+  /* Projects */
+  .project { display: grid; grid-template-columns: 1.12fr .88fr; gap: 48px; padding: 0 0 64px; margin-bottom: 64px; border-bottom: 1px solid var(--rule); align-items: start; }
+  .project:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+  .project h3 { font-size: 1.75rem; line-height: 1.15; margin-bottom: 6px; }
+  .project .summary { font-family: var(--serif); font-size: 1.2rem; line-height: 1.5; color: var(--ink); margin: 14px 0 16px; max-width: 46ch; }
+  .project-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; font-weight: 500; font-size: 15px; }
+  .project-link svg { width: 16px; height: 16px; }
+
+  .fig { margin: 0; background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; padding: 22px; position: sticky; top: 100px; }
+  .fig figcaption { font-size: 13px; color: var(--muted); margin-top: 16px; line-height: 1.5; }
+  .fig-title { font-size: 14px; color: var(--ink); font-weight: 500; margin: 0 0 16px; }
+
+  .bar-row { margin-bottom: 16px; }
+  .bar-label { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 6px; color: var(--ink-2); }
+  .bar-label b { font-family: var(--mono); font-weight: 500; font-size: 13.5px; color: var(--ink); }
+  .bar { height: 12px; background: var(--rule-soft); border-radius: 6px; overflow: hidden; }
+  .bar i { display: block; height: 100%; border-radius: 6px; background: var(--actual); }
+  .bar i.best { background: var(--accent); }
+  .mini-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--rule-soft); }
+  .mini-stats strong { display: block; white-space: nowrap; font-family: var(--serif); font-size: 1.3rem; font-weight: 500; color: var(--ink); line-height: 1.1; }
+  .mini-stats span { font-size: 12.5px; color: var(--muted); line-height: 1.35; display: block; margin-top: 4px; }
+
+  .vflow { list-style: none; counter-reset: v; display: grid; gap: 0; }
+  .vflow li { counter-increment: v; display: grid; grid-template-columns: 30px 1fr; gap: 14px; padding-bottom: 20px; position: relative; }
+  .vflow li:last-child { padding-bottom: 0; }
+  .vflow li::before { content: counter(v); width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--accent); color: var(--accent); display: grid; place-items: center; font: 500 13px/1 var(--mono); background: var(--surface); position: relative; z-index: 1; }
+  .vflow li::after { content: ""; position: absolute; left: 14.25px; top: 30px; bottom: 0; width: 1.5px; background: var(--rule); }
+  .vflow li:last-child::after { display: none; }
+  .vflow strong { display: block; color: var(--ink); font-weight: 600; font-size: 15px; line-height: 1.3; padding-top: 4px; }
+  .vflow span { display: block; font-size: 14px; color: var(--muted); line-height: 1.45; margin-top: 2px; }
+
+  .stego { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .stego div { text-align: center; }
+  .stego canvas { width: 100%; height: auto; aspect-ratio: 1; border-radius: 8px; border: 1px solid var(--rule); image-rendering: auto; }
+  .stego p { font-size: 13px; margin: 8px 0 0; color: var(--ink-2); }
+  .stego p small { display: block; color: var(--muted); font-size: 12px; }
+
+  /* Skills */
+  .skills { margin: 0; display: grid; }
+  .skills div { display: grid; grid-template-columns: 190px 1fr; gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--rule); }
+  .skills div:first-child { padding-top: 0; }
+  .skills div:last-child { border-bottom: 0; }
+  .skills dt { font-weight: 600; color: var(--ink); font-size: 15.5px; }
+  .skills dd { margin: 0; color: var(--ink-2); }
+
+  /* Education */
+  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .edu-item { padding-bottom: 22px; margin-bottom: 22px; border-bottom: 1px solid var(--rule); }
+  .edu-item:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+  .edu-item h3 { font-size: 1.3rem; line-height: 1.25; margin-bottom: 4px; }
+  .edu-item p { margin: 0; color: var(--muted); font-size: 15px; }
+  .edu-item .score { color: var(--ink); font-weight: 500; margin-top: 8px; }
+  .col-title { font-size: 14px; font-weight: 600; color: var(--muted); margin: 0 0 18px; }
+  .awards { list-style: none; display: grid; gap: 14px; }
+  .awards li { padding: 16px 18px; background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; }
+  .awards li.highlight { border-color: var(--accent); background: var(--accent-soft); }
+  .awards strong { display: block; color: var(--ink); font-weight: 600; font-size: 15.5px; }
+  .awards span { font-size: 14px; color: var(--muted); }
+
+  /* Contact */
+  .contact { padding: 110px 0 120px; border-top: 1px solid var(--rule); }
+  .contact h2 { font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1.05; letter-spacing: -0.02em; max-width: 16ch; margin-bottom: 22px; }
+  .contact > .wrap > p { color: var(--muted); max-width: 52ch; font-size: 18px; }
+  .email-link { display: inline-block; font-family: var(--serif); font-size: clamp(1.35rem, 3vw, 2rem); color: var(--accent); margin: 18px 0 40px; word-break: break-all; }
+  .contact-list { list-style: none; display: flex; flex-wrap: wrap; gap: 12px; }
+  .contact-list a { display: inline-flex; align-items: center; gap: 8px; }
+  .contact-list svg { width: 17px; height: 17px; }
+
+  footer { border-top: 1px solid var(--rule); padding: 28px 0; font-size: 14px; color: var(--muted); }
+  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  footer a { color: var(--muted); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 980px) {
+    .hero-row { grid-template-columns: 1fr; gap: 24px; margin-bottom: 56px; }
+    .facts { grid-template-columns: 1fr 1fr; row-gap: 20px; }
+    .facts div:nth-child(3) { padding-left: 0; border-left: 0; }
+    .section-grid { grid-template-columns: 1fr; gap: 32px; }
+    .section-head { position: static; }
+    .project { grid-template-columns: 1fr; gap: 28px; }
+    .fig { position: static; }
+    .flow { grid-template-columns: 1fr 1fr; }
+    .flow li:nth-child(2) { border-right: 0; }
+    .flow li:nth-child(-n+2) { border-bottom: 1px solid var(--rule-soft); }
+    .flow li:nth-child(2)::after { display: none; }
+  }
+  @media (max-width: 720px) {
+    body { font-size: 16px; }
+    .hero { padding: 56px 0 64px; }
+    .hero h1 { margin-bottom: 32px; }
+    .wrap { padding: 0 16px; }
+    .menu-btn { display: grid; place-items: center; }
+    .nav-links {
+      position: absolute; top: 68px; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0;
+      background: var(--bg); border-bottom: 1px solid var(--rule); padding: 8px 16px 18px; display: none;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links li a { display: block; padding: 12px 0; }
+    .nav-links li:last-child { margin-top: 8px; }
+    .nav-links .btn { justify-content: center; }
+    .section { padding: 68px 0; }
+    .flow { grid-template-columns: 1fr; }
+    .flow li { border-right: 0; border-bottom: 1px solid var(--rule-soft); }
+    .flow li:last-child { border-bottom: 0; }
+    .flow li::after { display: none; }
+    .skills div { grid-template-columns: 1fr; gap: 4px; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .mini-stats { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+    .contact { padding: 76px 0 84px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="Tejasvi Vasant Hegde, home">
+      <span class="brand-mark">TH</span>
+      <span>Tejasvi Hegde</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a class="btn btn-small" data-link="resume" href="resume.pdf" target="_blank" rel="noopener">Résumé</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <h1>Tejasvi Vasant Hegde</h1>
+      <div class="hero-row">
+        <p class="lede">I build machine-learning models and the production software around them.</p>
+        <div>
+          <p class="hero-sub">Computer Science undergraduate at RV College of Engineering, Bengaluru. Recently interned at Hewlett Packard Enterprise, building an AI-driven deployment platform that diagnoses and repairs its own failures.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">See my projects</a>
+            <a class="btn" data-link="email" href="mailto:tejasvivhegde.cs23@rvce.edu.in">Email me</a>
+          </div>
+        </div>
+      </div>
+      <dl class="facts">
+        <div><dt>Most recently</dt><dd>Intern, HPE</dd></div>
+        <div><dt>CGPA</dt><dd>8.91 / 10</dd></div>
+        <div><dt>Focus</dt><dd>ML systems, full-stack</dd></div>
+        <div><dt>Based in</dt><dd>Bengaluru, India</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE ================= -->
+  <section class="section" id="experience">
+    <div class="wrap section-grid">
+      <div class="section-head">
+        <h2>Experience</h2>
+        <p>Where I've shipped software alongside a professional engineering team.</p>
+      </div>
+      <div>
+        <article class="role">
+          <div class="role-top">
+            <h3>Intern, <span class="org">Hewlett Packard Enterprise</span></h3>
+            <span class="when">Mar 2026 – Jul 2026, remote</span>
+          </div>
+          <p>Built an AI-powered deployment platform that automates deployments, explains why they fail, and fixes common failures without a human in the loop.</p>
+          <ul class="bullets">
+            <li>Developed the deployment platform on Apache Airflow, LangGraph and retrieval-augmented generation for automated rollouts and failure analysis.</li>
+            <li>Built a self-healing pipeline in which AI agents use a ChromaDB knowledge base to patch broken DAGs and run SSH-based remediation.</li>
+            <li>Developed a React and FastAPI dashboard for managing deployments, streaming live logs and surfacing AI-generated operational insights.</li>
+          </ul>
+          <ol class="flow" aria-label="How the self-healing pipeline works">
+            <li><strong>Deployment fails</strong><span>An Airflow DAG errors during rollout</span></li>
+            <li><strong>Context retrieved</strong><span>Logs and past fixes pulled from ChromaDB</span></li>
+            <li><strong>Agent diagnoses</strong><span>A LangGraph agent reasons over the failure</span></li>
+            <li><strong>Fix applied</strong><span>DAG patched or host repaired over SSH</span></li>
+          </ol>
+          <p class="flow-cap">The self-healing loop I built, from failure to remediation.</p>
+          <ul class="tags" aria-label="Technologies used">
+            <li>Apache Airflow</li><li>LangGraph</li><li>RAG</li><li>ChromaDB</li><li>Docker</li><li>Redis</li><li>FastAPI</li><li>React</li><li>Bash</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section class="section" id="projects">
+    <div class="wrap section-grid">
+      <div class="section-head">
+        <h2>Projects</h2>
+        <p>Three end-to-end builds, each taken from model or hardware through to a working web app.</p>
+      </div>
+      <div>
+        <!-- Project: Load forecasting -->
+        <article class="project">
+          <div>
+            <h3>Electricity load forecasting</h3>
+            <span class="when">Mar 2026 – Jun 2026</span>
+            <p class="summary">Predicting Karnataka's hourly electricity demand up to seven days ahead.</p>
+            <ul class="bullets">
+              <li>Designed a stacked GRU + LightGBM model trained on 17,376 hourly observations from the Karnataka SLDC, combined with weather, holiday and calendar features.</li>
+              <li>Engineered 62 features and reached 5.59% MAPE, cutting error by 29% compared with a standalone GRU.</li>
+              <li>Shipped a FastAPI + React platform with forecast analytics, feature-importance views and an LLM-powered what-if simulator for testing demand scenarios.</li>
+            </ul>
+            <ul class="tags"><li>Python</li><li>TensorFlow (GRU)</li><li>LightGBM</li><li>Pandas</li><li>FastAPI</li><li>React</li><li>Tailwind CSS</li></ul>
+            <a class="project-link" data-link="githubForecast" href="#" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+              View source on GitHub
+            </a>
+          </div>
+          <figure class="fig">
+            <p class="fig-title">Forecast error, lower is better</p>
+            <div class="bar-row">
+              <div class="bar-label"><span>GRU on its own</span><b>≈7.9%</b></div>
+              <div class="bar"><i style="width: 100%"></i></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label"><span>GRU + LightGBM stack</span><b>5.59%</b></div>
+              <div class="bar"><i class="best" style="width: 71%"></i></div>
+            </div>
+            <div class="mini-stats">
+              <div><strong>29%</strong><span>less error than the baseline</span></div>
+              <div><strong>62</strong><span>engineered features</span></div>
+              <div><strong>7 days</strong><span>forecast horizon</span></div>
+            </div>
+            <figcaption>Mean absolute percentage error on held-out hours. The baseline value is derived from the 29% improvement.</figcaption>
+          </figure>
+        </article>
+
+        <!-- Project: Remote voting -->
+        <article class="project">
+          <div>
+            <h3>Remote voting system</h3>
+            <span class="when">Mar 2026 – Jun 2026</span>
+            <p class="summary">Letting people vote securely from anywhere, verified by their face.</p>
+            <ul class="bullets">
+              <li>Built a location-independent voting system with facial authentication and tamper-resistant vote storage.</li>
+              <li>Developed the React, Node.js, Express and MySQL stack with JWT authentication, AES-256 encryption and real-time administration APIs.</li>
+              <li>Integrated a Raspberry Pi voting terminal with camera-based face verification, GPIO controls and an OLED display.</li>
+            </ul>
+            <ul class="tags"><li>React</li><li>Node.js</li><li>Express</li><li>MySQL</li><li>Raspberry Pi</li><li>Python</li><li>JWT</li><li>AES-256</li><li>Face recognition</li></ul>
+            <a class="project-link" data-link="githubVoting" href="#" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+              View source on GitHub
+            </a>
+          </div>
+          <figure class="fig">
+            <p class="fig-title">What happens when someone votes</p>
+            <ol class="vflow">
+              <li><div><strong>Face verified at the terminal</strong><span>Raspberry Pi camera matches the voter against their registered face</span></div></li>
+              <li><div><strong>Session issued</strong><span>The server grants a short-lived JWT for this voter only</span></div></li>
+              <li><div><strong>Ballot cast</strong><span>Voter chooses on the terminal; the OLED confirms the selection</span></div></li>
+              <li><div><strong>Vote sealed</strong><span>Encrypted with AES-256 and written to tamper-resistant storage</span></div></li>
+            </ol>
+            <figcaption>Hardware, API and database working together for each vote.</figcaption>
+          </figure>
+        </article>
+
+        <!-- Project: Steganography -->
+        <article class="project">
+          <div>
+            <h3>Deep-learning image steganography</h3>
+            <span class="when">Oct 2025 – Jan 2026</span>
+            <p class="summary">Hiding one image inside another so that no one can tell it's there.</p>
+            <ul class="bullets">
+              <li>Designed an adversarial encoder–decoder–discriminator network with U-Net-style skip connections, residual blocks and squeeze-and-excitation attention.</li>
+              <li>Combined L1, MSE, SSIM, perceptual and adversarial losses, reaching 35.71 dB PSNR and 0.8845 SSIM between cover and stego images.</li>
+              <li>Ran ablation, payload-stress and robustness experiments across loss terms, embedding strengths and JPEG compression, then served the model through a Flask + React app for real-time embedding and extraction.</li>
+            </ul>
+            <ul class="tags"><li>PyTorch</li><li>CNNs</li><li>GANs</li><li>U-Net</li><li>Flask</li><li>React</li><li>TypeScript</li></ul>
+            <a class="project-link" data-link="githubStego" href="#" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+              View source on GitHub
+            </a>
+          </div>
+          <figure class="fig">
+            <p class="fig-title">Cover in, secret hidden, secret recovered</p>
+            <div class="stego">
+              <div><canvas id="cvCover" width="160" height="160" aria-label="Cover image"></canvas><p>Cover<small>original image</small></p></div>
+              <div><canvas id="cvStego" width="160" height="160" aria-label="Stego image, visually identical to the cover"></canvas><p>Stego<small>secret inside</small></p></div>
+              <div><canvas id="cvSecret" width="160" height="160" aria-label="Recovered secret image"></canvas><p>Recovered<small>decoder output</small></p></div>
+            </div>
+            <div class="mini-stats">
+              <div><strong>35.71 dB</strong><span>PSNR, cover vs stego</span></div>
+              <div><strong>0.8845</strong><span>SSIM, cover vs stego</span></div>
+              <div><strong>5</strong><span>loss terms combined</span></div>
+            </div>
+            <figcaption>Illustration of the pipeline. The stego image carries the secret with no visible change.</figcaption>
+          </figure>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section class="section" id="skills">
+    <div class="wrap section-grid">
+      <div class="section-head">
+        <h2>Skills</h2>
+        <p>The tools I reach for, all used in the work above.</p>
+      </div>
+      <dl class="skills">
+        <div><dt>Languages</dt><dd>Python, C, JavaScript, TypeScript, HTML, CSS, SQL, Bash</dd></div>
+        <div><dt>Machine learning</dt><dd>TensorFlow, PyTorch, LightGBM, Pandas, RAG, LangGraph, ChromaDB</dd></div>
+        <div><dt>Web &amp; backend</dt><dd>React, Node.js, Express, FastAPI, Flask, MySQL, Tailwind CSS</dd></div>
+        <div><dt>Infrastructure</dt><dd>Docker, Redis, Apache Airflow, Git, Raspberry Pi</dd></div>
+        <div><dt>Core CS</dt><dd>Data structures &amp; algorithms, operating systems, computer networks</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION ================= -->
+  <section class="section" id="education">
+    <div class="wrap section-grid">
+      <div class="section-head">
+        <h2>Education &amp; recognition</h2>
+      </div>
+      <div class="edu-grid">
+        <div>
+          <p class="col-title">Education</p>
+          <div class="edu-item">
+            <h3>B.E. in Computer Science</h3>
+            <p>R. V. College of Engineering, Bengaluru</p>
+            <p>Sep 2023 – present</p>
+            <p class="score">CGPA 8.91 / 10</p>
+          </div>
+          <div class="edu-item">
+            <h3>Pre-University, PCMC</h3>
+            <p>Ambika PU College, Puttur</p>
+            <p>2021 – 2023</p>
+            <p class="score">96.17%, KCET rank 156</p>
+          </div>
+        </div>
+        <div>
+          <p class="col-title">Awards &amp; certifications</p>
+          <ul class="awards">
+            <li class="highlight"><strong>3rd place, D3 Hackathon</strong><span>State level, IIIT Bhubaneswar</span></li>
+            <li><strong>AI for Economics</strong><span>NPTEL</span></li>
+            <li><strong>Data Science for Engineering</strong><span>NPTEL</span></li>
+            <li><strong>Complete Full Stack Web Development</strong><span>Udemy</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>Building something with ML or data? Let's talk.</h2>
+      <p>I'm interested in software engineering and machine-learning roles. Email is the quickest way to reach me.</p>
+      <a class="email-link" data-link="email" href="mailto:tejasvivhegde.cs23@rvce.edu.in">tejasvivhegde.cs23@rvce.edu.in</a>
+      <ul class="contact-list">
+        <li><a class="btn" data-link="linkedin" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>LinkedIn</a></li>
+        <li><a class="btn" data-link="github" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>GitHub</a></li>
+        <li><a class="btn" data-link="phone" href="tel:+918660618784">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>+91 86606 18784</a></li>
+        <li><a class="btn btn-primary" data-link="resume" href="resume.pdf" target="_blank" rel="noopener">Download résumé</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Tejasvi Vasant Hegde</span>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   EDIT YOUR LINKS HERE — every button on the page uses these.
+   ========================================================= */
+const LINKS = {
+  email:          "mailto:tejasvivhegde.cs23@rvce.edu.in",
+  phone:          "tel:+918660618784",
+  linkedin:       "https://www.linkedin.com/in/tejasvi-hegde-0528382a7/",
+  github:         "https://github.com/Tejasvi-hegde",
+  githubForecast: "https://github.com/Tejasvi-hegde/load-forecast-prediction",
+  githubVoting:   "https://github.com/Tejasvi-hegde/remote-voting-system",
+  githubStego:    "https://github.com/Tejasvi-hegde/Steganography",
+  resume:         "resume.pdf"   // replace resume.pdf in this folder to update it
+};
+
+document.querySelectorAll("[data-link]").forEach(a => {
+  const url = LINKS[a.dataset.link];
+  if (url) a.href = url;
+});
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* ---------- Nav: border on scroll + mobile menu ---------- */
+const nav = document.getElementById("nav");
+const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 8);
+window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+menuBtn.addEventListener("click", () => {
+  const open = navLinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", open);
+});
+navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+  navLinks.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false");
+}));
+
+/* ---------- Steganography illustration ---------- */
+(function drawStego() {
+  const S = 160;
+  function cover(ctx) {
+    const sky = ctx.createLinearGradient(0, 0, 0, S);
+    sky.addColorStop(0, "#BFD3F2"); sky.addColorStop(0.55, "#F2E3C9"); sky.addColorStop(1, "#E8C9A0");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, S, S);
+    ctx.fillStyle = "#F6B860"; ctx.beginPath(); ctx.arc(112, 62, 17, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = "#5E7FA8";
+    ctx.beginPath(); ctx.moveTo(0, 120); ctx.quadraticCurveTo(40, 78, 82, 108); ctx.quadraticCurveTo(118, 132, 160, 96); ctx.lineTo(160, 160); ctx.lineTo(0, 160); ctx.fill();
+    ctx.fillStyle = "#2F4C73";
+    ctx.beginPath(); ctx.moveTo(0, 140); ctx.quadraticCurveTo(60, 116, 100, 138); ctx.quadraticCurveTo(130, 152, 160, 132); ctx.lineTo(160, 160); ctx.lineTo(0, 160); ctx.fill();
+  }
+  function secret(ctx) {
+    ctx.fillStyle = "#F5F7FA"; ctx.fillRect(0, 0, S, S);
+    const c = 16;
+    let s = 3; const r = () => (s = (s * 9301 + 49297) % 233280) / 233280;
+    for (let yy = 0; yy < 10; yy++) for (let xx = 0; xx < 10; xx++) {
+      const corner = (xx < 3 && yy < 3) || (xx > 6 && yy < 3) || (xx < 3 && yy > 6);
+      const on = corner ? ((xx % 3 !== 1 || yy % 3 !== 1) && !(xx === 1 && yy === 1) ? (xx === 0 || xx === 2 || xx === 7 || xx === 9 || yy === 0 || yy === 2 || yy === 7 || yy === 9) : (xx % 3 === 1 && yy % 3 === 1)) : r() > 0.52;
+      if (on) { ctx.fillStyle = "#2747D0"; ctx.fillRect(xx * c, yy * c, c, c); }
+    }
+  }
+  const cc = document.getElementById("cvCover").getContext("2d");
+  const cs = document.getElementById("cvStego").getContext("2d");
+  const cr = document.getElementById("cvSecret").getContext("2d");
+  cover(cc); cover(cs); secret(cr);
+  // Imperceptible perturbation on the stego image, as the encoder would produce
+  const img = cs.getImageData(0, 0, S, S); let s2 = 11;
+  for (let i = 0; i < img.data.length; i += 4) { s2 = (s2 * 1103515245 + 12345) & 0x7fffffff; const d = (s2 % 5) - 2; img.data[i] += d; img.data[i + 1] += d; img.data[i + 2] -= d; }
+  cs.putImageData(img, 0, 0);
+})();
+</script>
+</body>
+</html>
